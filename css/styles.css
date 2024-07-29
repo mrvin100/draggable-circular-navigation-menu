@@ -1,0 +1,130 @@
+/* Custom css file made by JeanDoe */
+
+@charset 'utf-8';
+
+/* Import items */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+/* declaration of root variables */
+
+:root{
+    /* fonts */
+    --body-font: 'Poppins', Arial, sans-serif;
+
+    /* colors */
+    --white: #fff;
+    --black: #000;
+    --black-clr: #567;
+    --white-bg: #faf9f9;
+    --light-bg: #d1e1f1;
+    --light-clr: #888;
+}
+
+/* Initialisations of tags */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    font-family: var(--body-font);
+}
+
+
+/* bases */
+
+html{
+    font-size: 90%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 0.938rem;
+    font-weight: normal;
+    background: var(--white-bg);
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* nav-menu style starts */
+
+.nav-menu{
+    position: absolute;
+    top: 20px;
+    right: calc(100%/2);
+    width: 80px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+}
+
+.nav-menu .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-45deg);
+}
+
+.nav-menu .toggle_btn,
+.nav-menu span a{
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow:  0 0 20px rgba(0, 0, 0, .2);
+}
+
+.nav-menu .toggle_btn{
+    font-size: 35px;
+    color: #0e2431;
+    z-index: 100;
+    cursor: pointer;
+    transform: rotate(-225deg);
+    transition: all .6s ease;
+}
+
+.nav-menu.open .toggle_btn{
+    transform: rotate(0deg);
+}
+
+.nav-menu span{
+    position: absolute;
+    transition: all .6s ease;
+    opacity: 0;
+}
+
+.nav-menu.open .content span{
+    transform: rotate(calc(var(--i) * (360deg/8))) translateY(120px);
+    opacity: 1;
+}
+
+.nav-menu span a{
+    text-decoration: none;
+    transform: rotate(45deg);
+}
+
+.nav-menu span a i{
+    font-size: 24px;
+    color: #0e2431;
+    transform: rotate(calc(var(--i) * (360deg/ -8)));
+    opacity: .8;
+    transition: .2s;
+}
+
+.nav-menu span a:hover i{
+    opacity: 1;
+}
+
+
+@media  (max-width: 900px) {
+
+}
